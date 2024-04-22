@@ -308,7 +308,35 @@ section{
     }
 }
 
+.hobi{
+    .col{
 
+        .icerik{
+        font-size: 2rem;
+        border-radius: .5rem;
+        color: whitesmoke;
+        box-shadow: 0 .5rem 1rem rgba(250, 15, 15, 0.5);
+        margin-bottom: 3rem;
+
+        a{
+            color:crimson;
+            font-size: 2.5rem;
+        }
+
+        a:hover{
+            color: crimson;
+            text-shadow: 0 0 25px crimson,
+            0 0 50px crimson;
+            transform: scale(2.1);
+         }
+        }
+
+        img{
+            height: 25rem;
+            margin: 5rem;
+        }
+    }
+}
 
 
 
