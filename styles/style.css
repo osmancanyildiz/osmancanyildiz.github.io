@@ -339,6 +339,110 @@ section{
 }
 
 
+.iletisim{
+    
+    .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .info-cont{
+            width: 40rem;
+            h1{
+                font-size: 3rem;
+                color: whitesmoke;
+                padding-bottom: 1rem;
+            }
+
+            p{
+                font-size: 1.5rem;
+                color: #aaa;
+                padding: 1rem 0;
+                line-height: 2;
+            }
+
+            .kutuici{
+                padding: 2rem 0;
+
+                .kutu{
+                    display: flex;
+                    gap: 2rem;
+
+                    i{
+                        font-size: 3rem;
+                        color: crimson;
+                    }
+
+                    h3{
+                        font-size: 2rem;
+                        color: whitesmoke;
+                    }
+                }
+            }
+
+            .sosyal{
+                a{
+                    font-size: 2rem;
+                    height: 5rem;
+                    width: 5rem;
+                    line-height: 5rem;
+                    border-radius: 50%;
+                    background:#1a1a1a;
+                    color: whitesmoke;
+                    margin-right: .3rem;
+                    text-align: center;
+                    &:hover{
+                        background: crimson;
+                    }
+                }
+            }
+        }
+
+        form{
+            flex: 1 1 42rem;
+
+            .giriskutu{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                input{
+                    width: 49%;
+                }
+            }
+
+            .giriskutu input,
+            textarea{
+                border-radius: 5rem;
+                padding: 1.2rem 1.8rem;
+                font-size: 1.6rem;
+                color: whitesmoke;
+                text-transform: none;
+                margin: .7rem 0;
+                background: #1a1a1a;
+            }
+
+            textarea{
+                width: 100%;
+                border-radius: 1rem;
+                resize: none;
+                height: 25rem;
+            }
+
+            .btn{
+                padding: 1rem 3rem;
+                cursor: pointer;
+                &:hover{
+                    background: whitesmoke;
+                    color: black;
+                }
+            }
+        }
+    }
+
+
+}
 
 
 
@@ -402,6 +506,11 @@ section{
             font-size: 2.5rem;
         }
     }
+  }
+
+  .iletisim .row form .giriskutu input{
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
 }
