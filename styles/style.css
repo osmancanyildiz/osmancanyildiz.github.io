@@ -340,7 +340,12 @@ section{
 
 
 .iletisim{
-    
+    .baslik{
+        padding-bottom: 6rem;
+    }
+
+
+
     .row{
         display: flex;
         align-items: center;
@@ -348,6 +353,7 @@ section{
         gap: 2rem;
 
         .info-cont{
+            align-self: baseline;
             width: 40rem;
             h1{
                 font-size: 3rem;
@@ -367,7 +373,7 @@ section{
 
                 .kutu{
                     display: flex;
-                    gap: 2rem;
+                    gap: 3rem;
 
                     i{
                         font-size: 3rem;
@@ -402,6 +408,22 @@ section{
         form{
             flex: 1 1 42rem;
 
+            .sub-res{
+                display: flex;
+                flex-wrap: wrap;
+                
+                input{
+                    margin-right: 1rem;
+                }
+            }
+            .hatakutu{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                font-size: 1.5rem;
+                color: red;
+            }
+
             .giriskutu{
                 display: flex;
                 flex-wrap: wrap;
@@ -409,6 +431,21 @@ section{
 
                 input{
                     width: 49%;
+                }
+
+                .radiokutu{
+                    border-radius: 3rem;
+                    padding: 1.2rem 1.8rem;
+                    font-size: 1.6rem;
+                    color: crimson;
+                    text-transform: none;
+                    margin: .7rem 0;
+                    background: #1a1a1a;
+
+                    h1{
+                        font-size: 2rem;
+                        color: #aaa;
+                    }
                 }
             }
 
@@ -437,6 +474,29 @@ section{
                     background: whitesmoke;
                     color: black;
                 }
+            }
+
+            .giriskutu .selectkutu{
+                border-radius: 3rem;
+                flex-direction: column;
+                padding: 1.2rem 1.8rem;
+                font-size: 1.6rem;
+                color: #aaa;
+                text-transform: none;
+                margin: .7rem 0;
+                background: #1a1a1a;  
+                
+                select{
+                    background: #1a1a1a;
+                    color:crimson;
+                }
+            }
+
+            .giriskutu .hatamesaji{
+                font-size: 1rem;
+                color: red;
+                text-align: left;
+                margin: -5px 0 10px;
             }
         }
     }
@@ -520,12 +580,3 @@ section{
         font-size: 50%;
     }
 }
-
-
-
-
-
-
-
-
-
