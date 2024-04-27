@@ -43,6 +43,7 @@ section{
 
 }
 
+
 .baslik{
     text-align: center;
     font-size: 6vw;
@@ -55,6 +56,11 @@ section{
     }
 }
 
+.baslik2{
+    font-size: 5rem;
+    color: crimson;
+    margin-bottom: 3rem;
+}
 
 .btn{
     display: inline-block;
@@ -115,6 +121,7 @@ section{
         color: black;
     }
 }
+
 
 .navbar{
     position: fixed;
@@ -507,10 +514,87 @@ section{
 
 
 
+.sehrim{
+    .baslik{
+        margin-bottom: 5rem;
+    }
+
+    .baslik3{
+        font-size: 2.5rem;
+        color: whitesmoke;
+        margin-bottom: 2rem;
+    }
+    .kutuici{
+        .kutu{
+            font-size: 2rem;
+            border-radius: .5rem;
+            color: #aaa;
+            box-shadow: 0 .5rem 1rem rgba(250, 15, 15, 0.5);
+            margin-bottom: 3rem;
+        }
+
+        .image{
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }    
+    }
+}
+
+.miras{
+    
+
+    .baslik2{
+        font-size: 5rem;
+        color: wheat;
+        margin-bottom: 3rem;
+    }
+    article{
+        margin: 1rem;
+    }
+    .mirasbilgi{
+        display: flex;
+    }
+
+    .resimler{
+        margin: 2rem;
+        img{
+            width: 40rem;
+            height: 20rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+    }
+
+    .agac{
+        img{
+            width: 30rem;
+            height: 45rem;
+            margin-left: 2rem;
+        }
+    }
+
+    .galeri{
+        img{
+            margin: 1rem;
+            width:120rem ;
+            height: 83rem;
+        }
+    }
 
 
 
+    .kutuici{
+        .kutu{
+            font-size: 2rem;
+            border-radius: .5rem;
+            color: #aaa;
+            box-shadow: 0 .5rem 1rem rgba(250, 15, 15, 0.5);
+        }
+    }
 
+
+}
 
 
 
@@ -525,6 +609,20 @@ section{
         padding: 3rem 2rem;
     
     }
+    .iletisim .navbar{
+        a{
+            i{
+              padding: 0;  
+            }
+            span{
+                display: none;
+            }
+            &:hover{
+                background: crimson;
+                padding-bottom: 2rem;
+            }
+        }
+      }
 }
 
 @media (max-width:768px){
@@ -568,10 +666,53 @@ section{
     }
   }
 
+
+  .hakkimda .row .bilgilerim{
+    margin-left: 2rem;
+  }
   .iletisim .row form .giriskutu input{
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 2rem;
   }
+  .iletisim .row .info-cont{
+    margin-left: 2rem;
+  }
+
+  .sehrim .kutuici{
+    .image img{
+        height:25rem ;
+        width: 40rem;
+  }}
+
+  .miras{
+    .baslik2{
+        font-size: 3rem;
+        color: wheat;
+    }
+
+    .resimler{
+        img{
+        height: 25rem;
+        width: 35rem;
+        align-items: center;
+    
+    
+        }
+    }
+
+    .agac,.galeri{
+        img{
+            height: 45rem;
+            width: 30rem;
+            margin: 1rem;
+        }
+    }
+
+    .mirasbilgi{
+        display: block;
+    }
+  }
+
 
 }
 
@@ -579,4 +720,5 @@ section{
     html{
         font-size: 50%;
     }
+    
 }
