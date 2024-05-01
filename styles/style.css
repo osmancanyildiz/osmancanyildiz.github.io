@@ -330,9 +330,9 @@ section{
         }
 
         a:hover{
-            color: crimson;
+            color: darkred;
             text-shadow: 0 0 25px crimson,
-            0 0 50px crimson;
+            0 0 50px darkred;
             transform: scale(2.1);
          }
         }
@@ -353,6 +353,7 @@ section{
             p{
                 font-size: 1.6rem;
                 color: #aaa;
+                margin-bottom: 3rem;
             }
     
             .baslik2{
@@ -363,6 +364,12 @@ section{
             .baslik3{
                 font-size: 2rem;
                 color: #aaa;
+            }
+
+            .baslik1{
+                font-size: 5rem;
+                color: crimson;
+                margin-bottom: 3rem;
             }
         }
     
@@ -378,6 +385,42 @@ section{
                 color: #aaa;
     
             }
+        }
+
+        .music{
+            p{
+                font-size: 2rem;
+                color: #aaa;  
+            }
+        }
+
+        .film{
+
+            .baslik3{
+                font-size: 2rem;
+                color: #aaa;
+            }
+            
+            p{
+                font-size: 2rem;
+                color: #aaa;  
+            }
+
+            a{
+                margin: 2rem;
+            }
+
+        }
+
+        .yuruyus{
+            .baslik3{
+                color: #aaa;
+                font-size: 2rem;
+            }
+        }
+
+        .seyehat{
+
         }
     
 
