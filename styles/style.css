@@ -97,17 +97,17 @@ section{
     border-radius: 1rem;
     background: crimson;
     padding: .7rem;
-    font-size: 1.7rem;
+    font-size: 5rem;
     color: whitesmoke;
 
     &:hover{
         color: black;
     }
     i{
-        height: 4rem;
-        width: 4rem;
-        line-height: 4rem;
-        font-size: 1.7rem;
+        height: 6rem;
+        width: 6rem;
+        line-height: 6rem;
+        font-size: 3.2rem;
         text-align: center;
         background: whitesmoke;
         color: crimson;
@@ -187,10 +187,17 @@ section{
         display: block;
     }
     p{
-        font-size:1.7rem ;
-        color: lightslategrey;
+        font-size:2rem ;
+        color: #aaa;
         padding: 1rem 0;
         line-height: 2;
+    }
+
+    .carousel-item{
+        img{
+            width: 50rem;
+            height:70rem;
+        }
     }
 }
 
@@ -237,9 +244,9 @@ section{
 }
 
 .beceriler{
-    .kutuici{
+    .container{
 
-        .kutu{
+        .col{
             float: left;
             width: 20%;
             padding: 2rem;
@@ -269,7 +276,7 @@ section{
 
 .egitim{
 
-    padding-top: 20rem;
+    padding-top: 12rem;
     .kutuici{
         display: flex;
         flex-wrap: wrap;
@@ -877,7 +884,13 @@ section{
     }
   }
 
+  .beceriler{
+    .kutu{
+        display: flexbox;
+    }
 
+
+  }
   .hakkimda .row .bilgilerim{
     margin-left: 2rem;
   }

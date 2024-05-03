@@ -96,7 +96,7 @@ function cinsKontrol(){
 
 function sehirKontrol(){
     selects = document.getElementById( "sehir");
-    if (selects.value="") {
+    if (selects.value=0) {
         // value is set to a valid option, so submit form
         sehirhata.innerHTML = "";
         return true;
@@ -109,7 +109,7 @@ function sehirKontrol(){
 
 function yasKontrol(){
     selecty = document.getElementById("yas");
-    if (selecty.value="") {
+    if (selecty.value=0) {
         // value is set to a valid option, so submit form
         yashata.innerHTML = "";
         return true;

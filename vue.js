@@ -37,7 +37,7 @@ var app = new Vue({
 
 
 
-            localStorage.setItem('formData', JSON.stringify({
+        localStorage.setItem('formData', JSON.stringify({
         adsoyad: this.adsoyad,
         email: this.email,
         adres: this.adres,
@@ -63,6 +63,10 @@ var app = new Vue({
         validateForm: function() {
             return this.adsoyad && this.validateName(this.adsoyad) && this.email && this.adres && this.konu && this.cinsiyet && this.yas && this.sehir && this.mesaj;
 
+        },
+    
+        displayForm: function(){
+            
         }
     }
 });

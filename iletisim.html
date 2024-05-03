@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 </head>
-
 <body>
+
 <nav class="navbar">
     <a href="index.html"><i class="fas fa-user"></i><span>Hakkımda</span></a>
     <a href="ozgecmis.html"><i class="fas fa-address-card"></i><span>Özgeçmiş</span></a>
@@ -19,10 +19,10 @@
     <a href="mirasimiz.html"><i class="fas fa-star-and-crescent"></i><span>Mirasımız</span></a>
     <a href="ilgialanlarim.html"><i class="fas fa-icons"></i><span>Hobilerim</span></a>
     <a href="iletisim.html"><i class="fas fa-phone-square-alt"></i><span>Bana Ulaşın</span></a>
-    <a href="iletisim.html"><i class="fas fa-sign-in-alt"></i><span>Giriş Yap</span></a>
+    <a href="login.html"><i class="fas fa-sign-in-alt"></i><span>Giriş Yap</span></a>
 </nav>
 
-<section class="iletisim">
+<section class="iletisim" id="app">
 
     <h1 class="baslik"><span>BANA</span> ULAŞIN</h1>
     <div class="row">
@@ -66,10 +66,10 @@
 
         </div>
 
-        <form>
+        <form @submit.prevent="app.submitForm">
             <div class="giriskutu">
-                <input type="text" id="adsoyad" placeholder="Ad-Soyad" onkeyup="adKontrol()">
-                <input type="email" id="email" placeholder="Email" onkeyup="mailKontrol()">
+                <input type="text" id="adsoyad" v-model="adsoyad" placeholder="Ad-Soyad">
+                <input type="email" id="email" v-model="email" placeholder="Email">
             </div>
 
             <div class="hatakutu">
@@ -77,9 +77,18 @@
                 <span id="mailhata"></span>
             </div>
 
+            <div class="hatakutu">
+                <span v-if="!adsoyad">Ad-Soyad alanı boş geçilemez!(vue)</span>
+                <span v-else-if="!validateName(adsoyad)">Adınızı ve Soyadınızı tam giriniz!(vue)</span>
+                <span v-if="!email">Email alan boş geçilemez!(vue)</span>
+                <span v-else-if="!validateEmail(email)">Emailinizi tam giriniz!(vue)</span>
+            </div>
+
+
+
             <div class="giriskutu">
-                <input type="text" id="adres" placeholder="Adres" onkeyup="adresKontrol()">
-                <input type="text" id="konu" placeholder="Konu" onkeyup="konuKontrol()">
+                <input type="text" id="adres" v-model="adres" placeholder="Adres">
+                <input type="text" id="konu" v-model="konu" placeholder="Konu">
             </div>
 
             <div class="hatakutu">
@@ -87,161 +96,109 @@
                 <span id="konuhata"></span>
             </div>
 
+            <div class="hatakutu">
+                <span v-if="!adres">Adres alanı boş geçilemez!(vue)</span>
+                <span v-if="!konu">Konu alanı boş geçilemez!(vue)</span>
+            </div>
+
 
             <div class="giriskutu">
                 <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <div class="radiokutu">
-                        <h1>Cinsiyet:</h1>
-                        <div class="rad">
-                            <label for="erkek">Erkek</label>
-                            <input type="radio" id="erkek" name="cinsiyet" value="erkek" checked>
+                    <div class="row">
+                        <div class="col">
+                            <div class="radiokutu">
+                                <h1>Cinsiyet:</h1>
+                                <div class="rad">
+                                    <label for="erkek">Erkek</label>
+                                    <input name="cins" type="radio" id="erkek" v-model="cinsiyet" value="erkek">
+                                </div>
+
+                                <div class="rad">
+                                    <label for="kadin">Kadın</label>
+                                    <input name="cins" type="radio" id="kadin" v-model="cinsiyet" value="kadin">
+                                </div>
+
+                                <div class="rad">
+                                    <label for="other">Diğer</label>
+                                    <input name="cins" type="radio" id="diger" v-model="cinsiyet" value="diger">
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="rad">
-                            <label for="kadin">Kadın</label>
-                            <input type="radio" id="kadin" name="cinsiyet" value="kadin">
+                        <div class="col">
+                            <div class="selectkutu">
+                                <h1>Yaş:</h1>
+                                <select id="yas" v-model="yas">
+                                    <option value="" disabled selected>Yaş Seçin</option>
+                                    <option value="0-18">0-18</option>
+                                    <option value="18-30">18-30</option>
+                                    <option value="30+">30+</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="rad">
-                            <label for="other">Diğer</label>
-                            <input type="radio" id="diger" name="cinsiyet" value="diger">
+                        <div class="col">
+                            <div class="selectkutu">
+                                <h1>Şehir:</h1>
+                                <select id="sehir" v-model="sehir">
+                                    <option value="" disabled selected>Şehir Seçin</option>
+                                    <option  v-for="city in sehirler" :value="city">{{ city }}</option>
+                                </select>
+                            </div>
                         </div>
 
-                        
                     </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="selectkutu">
-                        <h1>Yaş:</h1>
-                        <select>
-                            <option value="0-18">0-18</option>
-                            <option value="18-30">18-30</option>
-                            <option value="30+">30+</option>
-                            </select>
-                        </div>
-                    </div>
-
-                  <div class="col">
-                    <div class="selectkutu">
-                        <h1>Şehir:</h1>
-                        <select>
-                            <option value="0" disabled="" selected="">Şehir Seçin</option>
-                            <option value="1">Adana</option>
-                            <option value="2">Adıyaman</option>
-                            <option value="3">Afyonkarahisar</option>
-                            <option value="4">Ağrı</option>
-                            <option value="5">Amasya</option>
-                            <option value="6">Ankara</option>
-                            <option value="7">Antalya</option>
-                            <option value="8">Artvin</option>
-                            <option value="9">Aydın</option>
-                            <option value="10">Balıkesir</option>
-                            <option value="11">Bilecik</option>
-                            <option value="12">Bingöl</option>
-                            <option value="13">Bitlis</option>
-                            <option value="14">Bolu</option>
-                            <option value="15">Burdur</option>
-                            <option value="16">Bursa</option>
-                            <option value="17">Çanakkale</option>
-                            <option value="18">Çankırı</option>
-                            <option value="19">Çorum</option>
-                            <option value="20">Denizli</option>
-                            <option value="21">Diyarbakır</option>
-                            <option value="22">Edirne</option>
-                            <option value="23">Elazığ</option>
-                            <option value="24">Erzincan</option>
-                            <option value="25">Erzurum</option>
-                            <option value="26">Eskişehir</option>
-                            <option value="27">Gaziantep</option>
-                            <option value="28">Giresun</option>
-                            <option value="29">Gümüşhane</option>
-                            <option value="30">Hakkâri</option>
-                            <option value="31">Hatay</option>
-                            <option value="32">Isparta</option>
-                            <option value="33">Mersin</option>
-                            <option value="34">İstanbul</option>
-                            <option value="35">İzmir</option>
-                            <option value="36">Kars</option>
-                            <option value="37">Kastamonu</option>
-                            <option value="38">Kayseri</option>
-                            <option value="39">Kırklareli</option>
-                            <option value="40">Kırşehir</option>
-                            <option value="41">Kocaeli</option>
-                            <option value="42">Konya</option>
-                            <option value="43">Kütahya</option>
-                            <option value="44">Malatya</option>
-                            <option value="45">Manisa</option>
-                            <option value="46">Kahramanmaraş</option>
-                            <option value="47">Mardin</option>
-                            <option value="48">Muğla</option>
-                            <option value="49">Muş</option>
-                            <option value="50">Nevşehir</option>
-                            <option value="51">Niğde</option>
-                            <option value="52">Ordu</option>
-                            <option value="53">Rize</option>
-                            <option value="54">Sakarya</option>
-                            <option value="55">Samsun</option>
-                            <option value="56">Siirt</option>
-                            <option value="57">Sinop</option>
-                            <option value="58">Sivas</option>
-                            <option value="59">Tekirdağ</option>
-                            <option value="60">Tokat</option>
-                            <option value="61">Trabzon</option>
-                            <option value="62">Tunceli</option>
-                            <option value="63">Şanlıurfa</option>
-                            <option value="64">Uşak</option>
-                            <option value="65">Van</option>
-                            <option value="66">Yozgat</option>
-                            <option value="67">Zonguldak</option>
-                            <option value="68">Aksaray</option>
-                            <option value="69">Bayburt</option>
-                            <option value="70">Karaman</option>
-                            <option value="71">Kırıkkale</option>
-                            <option value="72">Batman</option>
-                            <option value="73">Şırnak</option>
-                            <option value="74">Bartın</option>
-                            <option value="75">Ardahan</option>
-                            <option value="76">Iğdır</option>
-                            <option value="77">Yalova</option>
-                            <option value="78">Karabük</option>
-                            <option value="79">Kilis</option>
-                            <option value="80">Osmaniye</option>
-                            <option value="81">Düzce</option>
-                            </select>
-                        </div>
-                  </div>
-
-                </div>
                 </div>
             </div>
 
+
             <div class="hatakutu">
-                <span id="cinsiyethata"></span>
+                <span id="cinshata"></span>
                 <span id="yashata"></span>
                 <span id="sehirhata"></span>
             </div>
 
+            <div class="hatakutu">
+                <span v-if="!cinsiyet">Cinsiyet seçiniz!(vue)</span>
+                <span v-if="!yas">Yaş seçiniz!(vue)</span>
+                <span v-if="!sehir">Şehir seçiniz!(vue)</span>
+            </div>
 
-            <textarea name="" id="mesaj" placeholder="Mesajınız" cols="30" rows="10" onkeyup="mesajKontrol()"></textarea>
-            
+
+
+            <textarea v-model="mesaj" id="mesaj" placeholder="Mesajınız" cols="30" rows="10"></textarea>
+
+            <div class="hatakutu">
+                <span v-if="!mesaj">Mesaj alanı boş geçilemez!(vue)</span>
+            </div>
+
             <div class="hatakutu">
                 <span id="mesajhata"></span>
             </div>
 
             <div class="sub-res">
-                <input type="submit" onclick=" return formKontrol()" value="Gönder" class="btn">
+                <input type="submit" onclick=" return validateForm()" value="Gönder" class="btn">
+                <input type="button" onclick=" return formKontrol()" value="Kontrol Et (JS)" class="btn">
+                <input type="button" onclick=" return validateForm()" value="Kontrol Et (vueJS)" class="btn">
+                
                 <input type="reset" value="Temizle" class="btn">
+                
                 <div class="hatakutu">
                     <span id="submithata"></span>
                 </div>
+
+                <div class="hatakutu">
+                    <span v-if="error">Hatalı veya eksik yerleri düzeltin!(vue)</span>
+                </div>
+
             </div>
         </form>
     </div>
-<br><br>
+    <br><br>
 </section>
+
+<script src="vue.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
