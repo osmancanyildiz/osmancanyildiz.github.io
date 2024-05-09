@@ -96,27 +96,27 @@ function cinsKontrol(){
 
 function sehirKontrol(){
     selects = document.getElementById( "sehir");
-    if (selects.value=0) {
+    if (selects.value="") {
         // value is set to a valid option, so submit form
-        sehirhata.innerHTML = "";
-        return true;
+        sehirhata.innerHTML = "Şehir seçiniz!(js)";
+        return false;
       }
+      sehirhata.innerHTML = "";
+      return true;
 
-      sehirhata.innerHTML = "Şehir seçiniz!(js)";
-      return false;
 
 }
 
 function yasKontrol(){
     selecty = document.getElementById("yas");
-    if (selecty.value=0) {
+    if (selecty.value="") {
         // value is set to a valid option, so submit form
-        yashata.innerHTML = "";
-        return true;
+        yashata.innerHTML = "Yaş seçiniz!(js)";
+        return false;
       }
+      yashata.innerHTML = "";
+      return true;
 
-      yashata.innerHTML = "Yaş seçiniz!(js)";
-      return false;
 }
 
 
@@ -139,6 +139,8 @@ function formKontrol(){
 
         return false;
     }
+    submithata.innerHTML="Başarılı, gönderebilirsiniz.(js)";
+    return true
 
 }
 

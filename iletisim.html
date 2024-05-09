@@ -164,7 +164,10 @@
                 <span v-if="!sehir">Şehir seçiniz!(vue)</span>
             </div>
 
-
+            <div class="checkkutu">
+                <input type="checkbox" id="onay">
+                Form aracılığıyla sağladığım verilerimin Gizlilik ve Kişisel Verilerin Korunması Politikası kapsamında formda yer alan konu ile ilgili olarak tarafımla iletişime geçilmesi amacı ile işlenmesini kabul ediyorum.
+            </div>
 
             <textarea v-model="mesaj" id="mesaj" placeholder="Mesajınız" cols="30" rows="10"></textarea>
 
@@ -190,6 +193,7 @@
                 <div class="hatakutu">
                     <span v-if="error">Hatalı veya eksik yerleri düzeltin!(vue)</span>
                 </div>
+
 
             </div>
         </form>

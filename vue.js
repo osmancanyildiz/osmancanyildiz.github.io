@@ -33,23 +33,7 @@ var app = new Vue({
                 console.log('Form gönderildi:', this.data);
                 return;
             }
-
-
-
-
-        localStorage.setItem('formData', JSON.stringify({
-        adsoyad: this.adsoyad,
-        email: this.email,
-        adres: this.adres,
-        konu: this.konu,
-        cinsiyet: this.cinsiyet,
-        yas: this.yas,
-        sehir: this.sehir,
-        mesaj: this.mesaj
-    }));
-    window.location.href = "sonuc.html";
-    var formData = JSON.parse(localStorage.getItem('formData'));
-
+            
 
 
             // Form submit işlemi burada gerçekleşecek
@@ -63,10 +47,6 @@ var app = new Vue({
         validateForm: function() {
             return this.adsoyad && this.validateName(this.adsoyad) && this.email && this.adres && this.konu && this.cinsiyet && this.yas && this.sehir && this.mesaj;
 
-        },
-    
-        displayForm: function(){
-            
         }
     }
 });

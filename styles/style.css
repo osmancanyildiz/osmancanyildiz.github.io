@@ -424,6 +424,10 @@ section{
                 color: #aaa;
                 font-size: 2rem;
             }
+
+            .baslik2{
+                margin-top: 3rem;
+            }
         }
 
         
@@ -590,6 +594,10 @@ section{
                 color: red;
                 text-align: left;
                 margin: -5px 0 10px;
+            }
+            .checkkutu{
+                font-size: 1.6rem;
+                color: #aaa;
             }
         }
     }
