@@ -96,27 +96,27 @@ function cinsKontrol(){
 
 function sehirKontrol(){
     selects = document.getElementById( "sehir");
-    if (selects.value="") {
+    if (selects.value!="") {
         // value is set to a valid option, so submit form
-        sehirhata.innerHTML = "Şehir seçiniz!(js)";
-        return false;
+        sehirhata.innerHTML = "";
+        return true;
       }
-      sehirhata.innerHTML = "";
-      return true;
+      sehirhata.innerHTML = "Şehir seçiniz!(js)";
+      return false;
 
 
 }
 
 function yasKontrol(){
     selecty = document.getElementById("yas");
-    if (selecty.value="") {
+    if (selecty.value!="") {
         // value is set to a valid option, so submit form
-        yashata.innerHTML = "Yaş seçiniz!(js)";
-        return false;
+        yashata.innerHTML = "";
+        return true;
       }
-      yashata.innerHTML = "";
-      return true;
 
+      yashata.innerHTML = "Yaş seçiniz!(js)";
+      return false;
 }
 
 
@@ -124,8 +124,8 @@ function yasKontrol(){
 function formKontrol(){
 
     adKontrol();
-    adresKontrol()
-    konuKontrol()
+    adresKontrol();
+    konuKontrol();
     mesajKontrol();
     mailKontrol();
     yasKontrol();
@@ -139,8 +139,37 @@ function formKontrol(){
 
         return false;
     }
-    submithata.innerHTML="Başarılı, gönderebilirsiniz.(js)";
+    else{
+    submithata.innerHTML ="Başarılı, gönderebilirsiniz.(js)";
     return true
-
+    }
 }
+
+function submitForm() {
+    if (formKontrol()) {
+        // Form data
+        var formData = {
+            adsoyad: document.getElementById("adsoyad").value,
+            email: document.getElementById("email").value,
+            adres: document.getElementById("adres").value,
+            konu: document.getElementById("konu").value,
+            mesaj: document.getElementById("mesaj").value,
+            cinsiyet: document.querySelector('input[name="cins"]:checked').value,
+            yas: document.getElementById("yas").value,
+            sehir: document.getElementById("sehir").value
+        };
+
+        // Save form data to localStorage
+        localStorage.setItem('formData', JSON.stringify(formData));
+
+        // Redirect to sonuc.html
+        window.location.href = 'sonuc.html';
+    } else {
+        // Show error message
+        console.log('Form validation failed');
+    }
+}
+
+
+
 

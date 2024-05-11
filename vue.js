@@ -12,6 +12,7 @@ var app = new Vue({
         sehir: '',
         mesaj: '',
         error: false,
+        success: false,
         sehirler: [
             "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl",
             "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan",
@@ -33,9 +34,10 @@ var app = new Vue({
                 console.log('Form gönderildi:', this.data);
                 return;
             }
+            else{
+                this.success=true;
+            }
             
-
-
             // Form submit işlemi burada gerçekleşecek
         },
         validateName: function(name) {
@@ -46,7 +48,7 @@ var app = new Vue({
         },
         validateForm: function() {
             return this.adsoyad && this.validateName(this.adsoyad) && this.email && this.adres && this.konu && this.cinsiyet && this.yas && this.sehir && this.mesaj;
-
+            
         }
     }
 });

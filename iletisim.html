@@ -66,7 +66,7 @@
 
         </div>
 
-        <form @submit.prevent="app.submitForm">
+        <form method="post" @submit.prevent="submitForm" >
             <div class="giriskutu">
                 <input type="text" id="adsoyad" v-model="adsoyad" placeholder="Ad-Soyad">
                 <input type="email" id="email" v-model="email" placeholder="Email">
@@ -129,7 +129,7 @@
                             <div class="selectkutu">
                                 <h1>Yaş:</h1>
                                 <select id="yas" v-model="yas">
-                                    <option value="" disabled selected>Yaş Seçin</option>
+                                    <option value="0" disabled selected>Yaş Seçin</option>
                                     <option value="0-18">0-18</option>
                                     <option value="18-30">18-30</option>
                                     <option value="30+">30+</option>
@@ -141,7 +141,7 @@
                             <div class="selectkutu">
                                 <h1>Şehir:</h1>
                                 <select id="sehir" v-model="sehir">
-                                    <option value="" disabled selected>Şehir Seçin</option>
+                                    <option value="0" disabled selected>Şehir Seçin</option>
                                     <option  v-for="city in sehirler" :value="city">{{ city }}</option>
                                 </select>
                             </div>
@@ -180,9 +180,9 @@
             </div>
 
             <div class="sub-res">
-                <input type="submit" onclick=" return validateForm()" value="Gönder" class="btn">
+                <input type="submit" onclick=" return submitForm()" value="Gönder" class="btn">
                 <input type="button" onclick=" return formKontrol()" value="Kontrol Et (JS)" class="btn">
-                <input type="button" onclick=" return validateForm()" value="Kontrol Et (vueJS)" class="btn">
+                <input type="submit" onclick="return valiadteForm()" value="Kontrol Et (vueJS)" class="btn">
                 
                 <input type="reset" value="Temizle" class="btn">
                 
@@ -192,6 +192,7 @@
 
                 <div class="hatakutu">
                     <span v-if="error">Hatalı veya eksik yerleri düzeltin!(vue)</span>
+                    <span v-else-if="success">Başarılı, gönderebilirsiniz!(vue)</span>
                 </div>
 
 
@@ -201,6 +202,7 @@
     <br><br>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 <script src="vue.js"></script>
 <script src="script.js"></script>
 
