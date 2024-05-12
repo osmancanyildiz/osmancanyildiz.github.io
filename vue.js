@@ -12,6 +12,7 @@ var app = new Vue({
         sehir: '',
         mesaj: '',
         error: false,
+        check: '',
         success: false,
         sehirler: [
             "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl",
@@ -38,16 +39,15 @@ var app = new Vue({
                 this.success=true;
             }
             
-            // Form submit işlemi burada gerçekleşecek
         },
         validateName: function(name) {
-            return /^[a-zA-ZöçşığüÖÇŞİĞÜ,]*\s{1}[a-zA-ZöçşığüÖÇŞİĞÜ,]*$/.test(name);
+            return /^[a-zA-ZöçşığüÖÇŞİĞÜ,]+(\s{0,1}[a-zA-ZöçşığüÖÇŞİĞÜ, ])*$/.test(name);
         },
         validateEmail: function(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         },
         validateForm: function() {
-            return this.adsoyad && this.validateName(this.adsoyad) && this.email && this.adres && this.konu && this.cinsiyet && this.yas && this.sehir && this.mesaj;
+            return this.adsoyad && this.validateName(this.adsoyad) && this.email && this.adres && this.konu && this.cinsiyet && this.yas && this.sehir && this.mesaj && this.check;
             
         }
     }

@@ -1,984 +1,929 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',
-    sans-serif;
-    text-decoration: none;
-    outline: none; border: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  outline: none;
+  border: none;
 }
 
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
 
-    &::-webkit-scrollbar{
-        width: 1rem;
-    }
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
 
-    &::-webkit-scrollbar-track{
-        background: black;
-    }
+  &::-webkit-scrollbar-track {
+    background: black;
+  }
 
-    &::-webkit-scrollbar-thumb{
-        background: crimson;
-        border-radius: 5rem;
-    }
-    a:hover{
-        text-decoration: none;
-    }
-    a:active{
-        text-decoration: none;
-    }
-}
-
-body{
-    background: rgb(0, 0, 0);
-    padding-bottom: 6.5rem;
-}
-
-section{
-    padding: 5rem 9%;
-
-}
-
-
-.baslik{
-    text-align: center;
-    font-size: 6vw;
-    color: whitesmoke;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    span{
-        text-transform: uppercase;
-        color: crimson;
-    }
-}
-
-.baslik2{
-    font-size: 5rem;
-    color: crimson;
-    margin-bottom: 3rem;
-}
-
-.btn{
-    display: inline-block;
-    margin-top: 1rem;
+  &::-webkit-scrollbar-thumb {
+    background: crimson;
     border-radius: 5rem;
-    background: crimson;
-    padding: .7rem;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: none;
+  }
+}
+
+body {
+  background: rgb(0, 0, 0);
+  padding-bottom: 6.5rem;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+.baslik {
+  text-align: center;
+  font-size: 6vw;
+  color: whitesmoke;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  span {
+    text-transform: uppercase;
+    color: crimson;
+  }
+}
+
+.baslik2 {
+  font-size: 5rem;
+  color: crimson;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: crimson;
+  padding: 0.7rem;
+  font-size: 1.7rem;
+  color: whitesmoke;
+
+  &:hover {
+    color: black;
+  }
+  i {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
     font-size: 1.7rem;
-    color: whitesmoke;
-
-    &:hover{
-        color: black;
-    }
-    i{
-        height: 4rem;
-        width: 4rem;
-        line-height: 4rem;
-        font-size: 1.7rem;
-        text-align: center;
-        background: whitesmoke;
-        color: crimson;
-        border-radius: 50%;
-        margin-left: .5rem;
-        transition: .2s linear;
-    }
-    &:hover i{
-        margin-left:2rem ;
-        color: black;
-    }
+    text-align: center;
+    background: whitesmoke;
+    color: crimson;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    transition: 0.2s linear;
+  }
+  &:hover i {
+    margin-left: 2rem;
+    color: black;
+  }
 }
 
-.btn2{
-    display: inline-block;
-    margin-top: 1rem;
-    border-radius: 1rem;
-    background: crimson;
-    padding: .7rem;
-    font-size: 5rem;
-    color: whitesmoke;
+.btn2 {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background: crimson;
+  padding: 0.7rem;
+  font-size: 5rem;
+  color: whitesmoke;
 
-    &:hover{
-        color: black;
-    }
-    i{
-        height: 6rem;
-        width: 6rem;
-        line-height: 6rem;
-        font-size: 3.2rem;
-        text-align: center;
-        background: whitesmoke;
-        color: crimson;
-        border-radius: 50%;
-        margin-left: .5rem;
-        transition: .2s linear;
-    }
-    &:hover i{
-        margin-left:2rem ;
-        color: black;
-    }
+  &:hover {
+    color: black;
+  }
+  i {
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    font-size: 3.2rem;
+    text-align: center;
+    background: whitesmoke;
+    color: crimson;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    transition: 0.2s linear;
+  }
+  &:hover i {
+    margin-left: 2rem;
+    color: black;
+  }
 }
 
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 1000;
+  align-items: flex-end;
+  opacity: 90%;
 
-.navbar{
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    display: flex;
-    z-index: 1000;
-    align-items: flex-end;
-    opacity: 90%;
+  a {
+    padding: 2rem;
+    font-size: 2rem;
+    background: rgb(66, 66, 66);
+    flex: 1;
+    color: whitesmoke;
+    text-align: center;
 
-    a{
-        padding: 2rem;
-        font-size: 2rem;
-        background: rgb(66, 66, 66);
-        flex:1;
+    i {
+      color: crimson;
+      padding-right: 0.5rem;
+    }
+
+    &:hover {
+      background: crimson;
+      padding-bottom: 6rem;
+
+      i {
         color: whitesmoke;
-        text-align: center;
-
-        i{
-            color: crimson;
-            padding-right: .5rem;
-        }
-    
-        &:hover{
-            background: crimson;
-            padding-bottom: 6rem;
-
-            i{
-                color: whitesmoke;
-            }
-        }
+      }
     }
-   
+  }
 }
 
-.anasayfa{
+.anasayfa {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  min-height: calc(100vh - 6.5rem);
+
+  .image {
+    flex: 1 1 42rem;
+    text-align: center;
+    img {
+      height: 50rem;
+      width: 50rem;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+  }
+}
+
+.anaicerik {
+  flex: 1 1 42rem;
+  h3 {
+    color: whitesmoke;
+    font-size: 4rem;
+    padding-bottom: 0.5rem;
+  }
+  span {
+    font-size: 3rem;
+    color: crimson;
+    padding: 0.5rem 0;
+    display: block;
+  }
+  p {
+    font-size: 2rem;
+    color: #aaa;
+    padding: 1rem 0;
+    line-height: 2;
+  }
+
+  .carousel-item {
+    img {
+      width: 50rem;
+      height: 70rem;
+    }
+  }
+}
+
+.hakkimda {
+  .row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 4rem;
-    min-height:calc(100vh - 6.5rem);
+    gap: 2rem;
 
-    .image {
-        flex: 1 1 42rem;
-        text-align: center;
-        img{
-            height: 50rem;
-            width: 50rem;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    .bilgilerim {
+      flex: 1 1 42rem;
+      h2 {
+        font-size: 3rem;
+        color: whitesmoke;
+        text-transform: uppercase;
+        padding-bottom: 1rem;
+      }
+      .kutuici {
+        padding: 1rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .kutu {
+          flex: 1 1 20rem;
+
+          h3 {
+            font-size: 1.7rem;
+            color: whitesmoke;
+            padding: 1rem 0;
+            font-weight: normal;
+
+            span {
+              color: lightslategray;
+              font-weight: lighter;
+            }
+          }
         }
+      }
     }
+  }
 }
 
-.anaicerik{
-    flex: 1 1 42rem;
-    h3{
+.beceriler {
+  .container {
+    .col {
+      float: left;
+      width: 20%;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+      background: #1a1a1a;
+
+      &:hover {
+        background: lightblue;
+      }
+
+      img {
+        height: 7rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
         color: whitesmoke;
-        font-size: 4rem;
-        padding-bottom: .5rem;
+        font-size: 1.7rem;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
     }
-    span{
-        font-size: 3rem;
+  }
+}
+
+.egitim {
+  padding-top: 12rem;
+  .kutuici {
+    display: flex;
+    flex-wrap: wrap;
+
+    .kutu {
+      flex: 1 1 40rem;
+      margin-left: 2rem;
+      padding: 2rem;
+      padding-left: 3.5rem;
+      padding-bottom: 2rem;
+      border-left: 0.1rem solid #aaa;
+      position: relative;
+
+      i {
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        font-size: 1.7rem;
+        padding-bottom: 1rem;
+        border-radius: 50%;
+        background: crimson;
+        color: whitesmoke;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: -2.5rem;
+      }
+
+      span {
+        font-size: 1.7rem;
+        color: whitesmoke;
+        border-radius: 5rem;
+        padding: 0.5rem 1.5rem;
+        background: #1a1a1a;
+      }
+
+      h3 {
+        font-size: 2rem;
+        padding: 1rem 0;
+        color: whitesmoke;
+      }
+    }
+  }
+}
+
+.hobi {
+  .col {
+    .icerik {
+      font-size: 2rem;
+      border-radius: 0.5rem;
+      color: whitesmoke;
+      box-shadow: 0 0.5rem 1rem rgba(250, 15, 15, 0.5);
+      margin-bottom: 3rem;
+
+      a {
         color: crimson;
-        padding: .5rem 0;
-        display: block;
+        font-size: 2.5rem;
+      }
+
+      a:hover {
+        color: darkred;
+        text-shadow: 0 0 25px crimson, 0 0 50px darkred;
+        transform: scale(2.1);
+      }
     }
-    p{
-        font-size:2rem ;
+
+    img {
+      height: 20rem;
+      width: 30rem;
+      margin: 1rem;
+      margin-top: 3rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .hobidetay {
+    .siir {
+      p {
+        font-size: 1.6rem;
+        color: #aaa;
+        margin-bottom: 3rem;
+      }
+
+      .baslik2 {
+        color: wheat;
+        font-size: 2.2rem;
+      }
+
+      .baslik3 {
+        font-size: 2rem;
+        color: #aaa;
+      }
+
+      .baslik1 {
+        font-size: 5rem;
+        color: crimson;
+        margin-bottom: 3rem;
+      }
+    }
+
+    .kitap {
+      .baslik3 {
+        color: #aaa;
+        font-size: 2rem;
+      }
+
+      ul {
+        list-style: square;
+        font-size: 1.6rem;
+        color: #aaa;
+      }
+    }
+
+    .music {
+      p {
+        font-size: 2rem;
+        color: #aaa;
+      }
+    }
+
+    .film {
+      .baslik3 {
+        font-size: 2rem;
+        color: #aaa;
+      }
+
+      p {
+        font-size: 2rem;
+        color: #aaa;
+      }
+
+      a {
+        margin: 2rem;
+      }
+
+      .card {
+        font-family: "Source Sans Pro", sans-serif;
+        width: 30%;
+        display: inline-flex;
+        border: none;
+        margin: 1rem;
+      }
+      .card-body {
+        font-size: 20px;
+        background-color: #333;
+      }
+
+      .card-suc {
+        height: 110px;
+      }
+    }
+
+    .yuruyus {
+      .baslik3 {
+        color: #aaa;
+        font-size: 2rem;
+      }
+
+      .baslik2 {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+.iletisim {
+  .baslik {
+    padding-bottom: 6rem;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .info-cont {
+      align-self: baseline;
+      width: 40rem;
+      h1 {
+        font-size: 3rem;
+        color: whitesmoke;
+        padding-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem;
         color: #aaa;
         padding: 1rem 0;
         line-height: 2;
-    }
+      }
 
-    .carousel-item{
-        img{
-            width: 50rem;
-            height:70rem;
-        }
-    }
-}
+      .kutuici {
+        padding: 2rem 0;
 
-.hakkimda{
-    .row{
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
+        .kutu {
+          display: flex;
+          gap: 3rem;
 
-        .bilgilerim{
-            flex: 1 1 42rem;
-            h1{
-                font-size: 3rem;
-                color: whitesmoke;
-                text-transform: uppercase;
-                padding-bottom: 1rem;
-            }
-            .kutuici{
-                padding: 1rem 0;
-                display: flex;
-                flex-wrap:wrap ;
-                gap: 2rem;
+          i {
+            font-size: 3rem;
+            color: crimson;
+          }
 
-                .kutu{
-                    flex: 1 1 20rem;
-
-                    h3{
-                        font-size:1.7rem;
-                        color: whitesmoke;
-                        padding: 1rem 0;
-                        font-weight: normal;
-
-                        span{
-                            color: lightslategray;
-                            font-weight: lighter;
-                        }
-                    }
-                }
-            }
-            
-        }
-    }
-}
-
-.beceriler{
-    .container{
-
-        .col{
-            float: left;
-            width: 20%;
-            padding: 2rem;
-            text-align: center;
-            border-radius: .5rem;
-            box-shadow: 0 .5rem 1rem rgba(0,0,0,.7);
-            background: #1a1a1a;
-
-            &:hover{
-                background: lightblue;
-            }
-
-            img{
-                height: 7rem;
-                margin-bottom: 1rem;
-            }
-
-            h3{
-                color: whitesmoke;
-                font-size: 1.7rem;
-                font-weight: normal;
-                text-transform: uppercase;
-            }
-        }
-    }
-}
-
-.egitim{
-
-    padding-top: 12rem;
-    .kutuici{
-        display: flex;
-        flex-wrap: wrap;
-
-        .kutu{
-            flex: 1 1 40rem;
-            margin-left:2rem;
-            padding: 2rem;
-            padding-left: 3.5rem;
-            padding-bottom: 2rem;
-            border-left: .1rem solid #aaa;
-            position: relative;
-
-            i{
-                height: 4.5rem;
-                width: 4.5rem;
-                line-height: 4.5rem;
-                font-size: 1.7rem;
-                padding-bottom: 1rem;
-                border-radius: 50%;
-                background: crimson;
-                color: whitesmoke;
-                text-align: center;
-                position: absolute;
-                top: 0; left: -2.5rem;
-            }
-
-            span{
-                font-size: 1.7rem;
-                color: whitesmoke;
-                border-radius:5rem ;
-                padding: .5rem 1.5rem;
-                background: #1a1a1a;
-            }
-
-            h3{
-                font-size: 2rem;
-                padding: 1rem 0;
-                color: whitesmoke;
-            }
-        }
-    }
-}
-
-.hobi{
-    .col{
-
-        .icerik{
-        font-size: 2rem;
-        border-radius: .5rem;
-        color: whitesmoke;
-        box-shadow: 0 .5rem 1rem rgba(250, 15, 15, 0.5);
-        margin-bottom: 3rem;
-
-        a{
-            color:crimson;
-            font-size: 2.5rem;
-        }
-
-        a:hover{
-            color: darkred;
-            text-shadow: 0 0 25px crimson,
-            0 0 50px darkred;
-            transform: scale(2.1);
-         }
-        }
-
-        img{
-            height: 20rem;
-            width: 30rem;
-            margin: 1rem;
-            margin-top: 3rem;
-            margin-bottom: 4rem;
-            
-        }
-    }
-
-    .hobidetay{
-
-        .siir{
-            p{
-                font-size: 1.6rem;
-                color: #aaa;
-                margin-bottom: 3rem;
-            }
-    
-            .baslik2{
-                    color: wheat;
-                    font-size: 2.2rem;    
-            }
-    
-            .baslik3{
-                font-size: 2rem;
-                color: #aaa;
-            }
-
-            .baslik1{
-                font-size: 5rem;
-                color: crimson;
-                margin-bottom: 3rem;
-            }
-        }
-    
-        .kitap{
-            .baslik3{
-                    color: #aaa;
-                    font-size: 2rem;
-            }
-    
-            ul{
-                list-style: square;
-                font-size: 1.6rem;
-                color: #aaa;
-    
-            }
-        }
-
-        .music{
-            p{
-                font-size: 2rem;
-                color: #aaa;  
-            }
-        }
-
-        .film{
-
-            .baslik3{
-                font-size: 2rem;
-                color: #aaa;
-            }
-            
-            p{
-                font-size: 2rem;
-                color: #aaa;  
-            }
-
-            a{
-                margin: 2rem;
-            }
-
-        }
-
-        .yuruyus{
-            .baslik3{
-                color: #aaa;
-                font-size: 2rem;
-            }
-
-            .baslik2{
-                margin-top: 3rem;
-            }
-        }
-
-        
-    }
-
-}
-
-
-.iletisim{
-    .baslik{
-        padding-bottom: 6rem;
-    }
-
-
-
-    .row{
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-
-        .info-cont{
-            align-self: baseline;
-            width: 40rem;
-            h1{
-                font-size: 3rem;
-                color: whitesmoke;
-                padding-bottom: 1rem;
-            }
-
-            p{
-                font-size: 1.5rem;
-                color: #aaa;
-                padding: 1rem 0;
-                line-height: 2;
-            }
-
-            .kutuici{
-                padding: 2rem 0;
-
-                .kutu{
-                    display: flex;
-                    gap: 3rem;
-
-                    i{
-                        font-size: 3rem;
-                        color: crimson;
-                    }
-
-                    h3{
-                        font-size: 2rem;
-                        color: whitesmoke;
-                    }
-                }
-            }
-
-            .sosyal{
-                a{
-                    font-size: 2rem;
-                    height: 5rem;
-                    width: 5rem;
-                    line-height: 5rem;
-                    border-radius: 50%;
-                    background:#1a1a1a;
-                    color: whitesmoke;
-                    margin-right: .3rem;
-                    text-align: center;
-                    &:hover{
-                        background: crimson;
-                    }
-                }
-            }
-        }
-
-        form{
-            flex: 1 1 42rem;
-
-            .sub-res{
-                display: flex;
-                flex-wrap: wrap;
-                
-                input{
-                    margin-right: 1rem;
-                }
-            }
-            .hatakutu{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                font-size: 1.5rem;
-                color: red;
-            }
-
-            .giriskutu{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-
-                input{
-                    width: 49%;
-                }
-
-                .radiokutu{
-                    border-radius: 3rem;
-                    padding: 1.2rem 1.8rem;
-                    font-size: 1.6rem;
-                    color: crimson;
-                    text-transform: none;
-                    margin: .7rem 0;
-                    background: #1a1a1a;
-
-                    h1{
-                        font-size: 2rem;
-                        color: #aaa;
-                    }
-                }
-            }
-
-            .giriskutu input,
-            textarea{
-                border-radius: 5rem;
-                padding: 1.2rem 1.8rem;
-                font-size: 1.6rem;
-                color: whitesmoke;
-                text-transform: none;
-                margin: .7rem 0;
-                background: #1a1a1a;
-            }
-
-            textarea{
-                width: 100%;
-                border-radius: 1rem;
-                resize: none;
-                height: 25rem;
-            }
-
-            .btn{
-                padding: 1rem 3rem;
-                cursor: pointer;
-                &:hover{
-                    background: whitesmoke;
-                    color: black;
-                }
-            }
-
-            .giriskutu .selectkutu{
-                border-radius: 3rem;
-                flex-direction: column;
-                padding: 1.2rem 1.8rem;
-                font-size: 1.6rem;
-                color: #aaa;
-                text-transform: none;
-                margin: .7rem 0;
-                background: #1a1a1a;  
-                
-                select{
-                    background: #1a1a1a;
-                    color:crimson;
-                }
-            }
-
-            .giriskutu .hatamesaji{
-                font-size: 1rem;
-                color: red;
-                text-align: left;
-                margin: -5px 0 10px;
-            }
-            .checkkutu{
-                font-size: 1.6rem;
-                color: #aaa;
-            }
-        }
-    }
-
-
-}
-
-
-
-
-.sehrim{
-    .baslik{
-        margin-bottom: 5rem;
-    }
-
-    .baslik3{
-        font-size: 2.5rem;
-        color: whitesmoke;
-        margin-bottom: 2rem;
-    }
-    .kutuici{
-        .kutu{
+          h3 {
             font-size: 2rem;
-            border-radius: .5rem;
-            color: #aaa;
-            box-shadow: 0 .5rem 1rem rgba(250, 15, 15, 0.5);
-            margin-bottom: 3rem;
-        }
-
-        .image{
-            margin-top: 5rem;
-            margin-bottom: 5rem;
-        }    
-    }
-}
-
-.miras{
-    
-
-    .baslik2{
-        font-size: 5rem;
-        color: wheat;
-        margin-bottom: 3rem;
-    }
-    article{
-        margin: 1rem;
-    }
-    .mirasbilgi{
-        display: flex;
-    }
-
-    .resimler{
-        margin: 2rem;
-        img{
-            width: 40rem;
-            height: 20rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-    }
-
-    .agac{
-        img{
-            width: 30rem;
-            height: 45rem;
-            margin-left: 2rem;
-        }
-    }
-
-    .galeri{
-        img{
-            margin: 1rem;
-            width:120rem ;
-            height: 83rem;
-        }
-    }
-
-
-
-    .kutuici{
-        .kutu{
-            font-size: 2rem;
-            border-radius: .5rem;
-            color: #aaa;
-            box-shadow: 0 .5rem 1rem rgba(250, 15, 15, 0.5);
-        }
-    }
-
-
-}
-
-
-
-
-.login{
-
-    .baslik{
-        padding-bottom: 6rem;
-    }
-    .kutuici {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .giriskutu {
-        margin-bottom: 2rem;
-        font-size: 2.5rem;
-    }
-    
-    .giriskutu input[type="email"],
-    .giriskutu input[type="password"] {
-        width: 300px;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #333;
-        color: #fff;
-        outline: none;
-    }
-    
-    .giriskutu input[type="email"]::placeholder,
-    .giriskutu input[type="text"]::placeholder {
-        color: #999;
-    }
-    
-    .hatakutu {
-        text-align: center;
-    }
-    
-    .hatakutu span {
-        color: red;
-        font-size: 2rem;
-    }
-    
-    .sub-res {
-        margin-top: 20px;
-    }
-    
-    .sub-res input[type="submit"]{
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: crimson;
-        color: #fff;
-        cursor: pointer;
-        outline: none;
-    }
-    
-    .sub-res input[type="submit"]:hover,
-    .sub-res input[type="reset"]:hover {
-        background-color: #991313;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* cihaz uyumu kontrolü */
-@media (max-width:1200px){
-    html{
-        font-size: 55%;
-    }
-    section{
-        padding: 3rem 2rem;
-    
-    }
-    .navbar{
-        a{
-            i{
-              padding: 0;  
-            }
-            span{
-                display: none;
-            }
-            &:hover{
-                background: wheat;
-                padding-bottom: 2rem;
-            }
+            color: whitesmoke;
+          }
         }
       }
 
-  .iletisim .row .info-cont{
+      .sosyal {
+        a {
+          font-size: 2rem;
+          height: 5rem;
+          width: 5rem;
+          line-height: 5rem;
+          border-radius: 50%;
+          background: #1a1a1a;
+          color: whitesmoke;
+          margin-right: 0.3rem;
+          text-align: center;
+          &:hover {
+            background: crimson;
+          }
+        }
+      }
+    }
+
+    form {
+      flex: 1 1 42rem;
+
+      .sub-res {
+        display: flex;
+        flex-wrap: wrap;
+
+        input {
+          margin-right: 1rem;
+        }
+      }
+      .hatakutu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        color: red;
+      }
+
+      .giriskutu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        input {
+          width: 49%;
+        }
+
+        .radiokutu {
+          border-radius: 3rem;
+          padding: 1.2rem 1.8rem;
+          font-size: 1.6rem;
+          color: crimson;
+          text-transform: none;
+          margin: 0.7rem 0;
+          background: #1a1a1a;
+
+          h1 {
+            font-size: 2rem;
+            color: #aaa;
+          }
+        }
+      }
+
+      .giriskutu input,
+      textarea {
+        border-radius: 5rem;
+        padding: 1.2rem 1.8rem;
+        font-size: 1.6rem;
+        color: whitesmoke;
+        text-transform: none;
+        margin: 0.7rem 0;
+        background: #1a1a1a;
+      }
+
+      textarea {
+        width: 100%;
+        border-radius: 1rem;
+        resize: none;
+        height: 25rem;
+      }
+
+      .btn {
+        padding: 1rem 3rem;
+        cursor: pointer;
+        &:hover {
+          background: whitesmoke;
+          color: black;
+        }
+      }
+
+      .giriskutu .selectkutu {
+        border-radius: 3rem;
+        flex-direction: column;
+        padding: 1.2rem 1.8rem;
+        font-size: 1.6rem;
+        color: #aaa;
+        text-transform: none;
+        margin: 0.7rem 0;
+        background: #1a1a1a;
+
+        select {
+          background: #1a1a1a;
+          color: crimson;
+        }
+      }
+
+      .giriskutu .hatamesaji {
+        font-size: 1rem;
+        color: red;
+        text-align: left;
+        margin: -5px 0 10px;
+      }
+      .checkkutu {
+        font-size: 1.6rem;
+        color: #aaa;
+      }
+    }
+  }
+}
+
+.sehrim {
+  .baslik {
+    margin-bottom: 5rem;
+  }
+
+  .baslik3 {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    margin-bottom: 2rem;
+  }
+  .kutuici {
+    .kutu {
+      font-size: 2rem;
+      border-radius: 0.5rem;
+      color: #aaa;
+      box-shadow: 0 0.5rem 1rem rgba(250, 15, 15, 0.5);
+      margin-bottom: 3rem;
+    }
+
+    .image {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.miras {
+  .baslik2 {
+    font-size: 5rem;
+    color: wheat;
+    margin-bottom: 3rem;
+  }
+  article {
+    margin: 1rem;
+  }
+  .mirasbilgi {
+    display: flex;
+  }
+
+  .resimler {
+    margin: 2rem;
+    img {
+      width: 40rem;
+      height: 20rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+
+  .agac {
+    img {
+      width: 30rem;
+      height: 45rem;
+      margin-left: 2rem;
+    }
+  }
+
+  .galeri {
+    img {
+      margin: 1rem;
+      width: 120rem;
+      height: 83rem;
+    }
+  }
+
+  .kutuici {
+    .kutu {
+      font-size: 2rem;
+      border-radius: 0.5rem;
+      color: #aaa;
+      box-shadow: 0 0.5rem 1rem rgba(250, 15, 15, 0.5);
+    }
+  }
+}
+
+.login {
+  .baslik {
+    padding-bottom: 6rem;
+  }
+  .kutuici {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .giriskutu {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .giriskutu input[type="email"],
+  .giriskutu input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+  }
+
+  .giriskutu input[type="email"]::placeholder,
+  .giriskutu input[type="text"]::placeholder {
+    color: #999;
+  }
+
+  .hatakutu {
+    text-align: center;
+  }
+
+  .hatakutu span {
+    color: red;
+    font-size: 2rem;
+  }
+
+  .sub-res {
+    margin-top: 20px;
+  }
+
+  .sub-res input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: crimson;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .sub-res input[type="submit"]:hover,
+  .sub-res input[type="reset"]:hover {
+    background-color: #991313;
+  }
+}
+
+/* cihaz uyumu kontrolü */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+  .navbar {
+    a {
+      i {
+        padding: 0;
+      }
+      span {
+        display: none;
+      }
+      &:hover {
+        background: wheat;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+
+  .iletisim .row .info-cont {
     margin-left: 2rem;
   }
 
-  .sehrim .kutuici{
+  .sehrim .kutuici {
     margin: 1rem;
-    .image img{
-        height:35rem ;
-        width: 60rem;
-  }}
+    .image img {
+      height: 35rem;
+      width: 60rem;
+    }
+  }
 
-  .miras{
+  .miras {
     margin: 1rem;
-    .baslik2{
-        font-size: 3rem;
-        color: wheat;
+    .baslik2 {
+      font-size: 3rem;
+      color: wheat;
     }
 
-    .resimler{
-        img{
+    .resimler {
+      img {
         height: 30rem;
         width: 50rem;
         align-items: center;
-        }
+      }
     }
 
-    .agac{
-        margin-top: 2rem;
-        display: block;
+    .agac {
+      margin-top: 2rem;
+      display: block;
     }
 
-    .galeri{
-        img{
-            height: 60rem;
-            width: 80rem;
-            margin: 1rem;
-        }
+    .galeri {
+      img {
+        height: 60rem;
+        width: 80rem;
+        margin: 1rem;
+      }
     }
 
-    .mirasbilgi{
-        display: block;
+    .mirasbilgi {
+      display: block;
     }
   }
-
-
-
-  
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .baslik {
+    font-size: 12vw;
+  }
 
-    .baslik{
-        font-size: 12vw;
-
-    }
-
-
-    .navbar{
-
-    a{
-        i{
-          padding: 0;  
-        }
-        span{
-            display: none;
-        }
-        &:hover{
-            background: crimson;
-            padding-bottom: 2rem;
-        }
+  .navbar {
+    a {
+      i {
+        padding: 0;
+      }
+      span {
+        display: none;
+      }
+      &:hover {
+        background: crimson;
+        padding-bottom: 2rem;
+      }
     }
   }
-  .anasayfa{
+  .anasayfa {
     text-align: center;
-    gap:2rem;
+    gap: 2rem;
 
-    .image img{
-        height:30rem ;
-        width: 30rem;
+    .image img {
+      height: 30rem;
+      width: 30rem;
     }
-    .anaicerik{
-        h3{
-            font-size: 3rem;
-        }
-        span{
-            font-size: 2.5rem;
-        }
+    .anaicerik {
+      h3 {
+        font-size: 3rem;
+      }
+      span {
+        font-size: 2.5rem;
+      }
     }
   }
 
-  .beceriler{
-    .kutu{
-        display: flexbox;
+  .beceriler {
+    .kutu {
+      display: flexbox;
     }
-
-
   }
-  .hakkimda .row .bilgilerim{
+  .hakkimda .row .bilgilerim {
     margin-left: 2rem;
   }
-  .iletisim .row form .giriskutu input{
+  .iletisim .row form .giriskutu input {
     width: 100%;
     margin: 2rem;
   }
-  .iletisim .row .info-cont{
+  .iletisim .row .info-cont {
     margin-left: 2rem;
   }
-  .iletisim .row form .rad{
-    label{
-        margin-top: 1.5rem;
+  .iletisim .row form .rad {
+    label {
+      margin-top: 1.5rem;
     }
     display: flex;
   }
 
-  .sehrim .kutuici{
-    .image img{
-        height:25rem ;
-        width: 40rem;
-  }}
+  .sehrim .kutuici {
+    .image img {
+      height: 25rem;
+      width: 40rem;
+    }
+  }
 
-  .miras{
-    .baslik2{
-        font-size: 3rem;
-        color: wheat;
+  .miras {
+    .baslik2 {
+      font-size: 3rem;
+      color: wheat;
     }
 
-    .resimler{
-        img{
+    .resimler {
+      img {
         height: 30rem;
         width: 40rem;
         align-items: center;
-    
-    
-        }
+      }
     }
 
-    .agac{
-        img{
-            height: 45rem;
-            width: 30rem;
-            margin: 1rem;
-        }
+    .agac {
+      img {
+        height: 45rem;
+        width: 30rem;
+        margin: 1rem;
+      }
     }
 
-    .galeri{
-        img{
-            height: 25rem;
-            width: 35rem;
-            margin: 1rem;
-        }
+    .galeri {
+      img {
+        height: 25rem;
+        width: 35rem;
+        margin: 1rem;
+      }
     }
 
-    .mirasbilgi{
-        display: block;
+    .mirasbilgi {
+      display: block;
     }
   }
-    .hobidetay .kitap ul{
-        margin-left: 1rem;
-    }
-
-
+  .hobidetay .kitap ul {
+    margin-left: 1rem;
+  }
 }
 
-@media (max-width:450px){
-    html{
-        font-size: 50%;
-    }
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
 
-    .miras{
-        .resimler{
-            img{
-                height: 20rem;
-                width: 35rem;
-                padding-right:4rem ;
-            }
-        }
+  .miras {
+    .resimler {
+      img {
+        height: 20rem;
+        width: 35rem;
+        padding-right: 4rem;
+      }
     }
-    
-    
+  }
 }
