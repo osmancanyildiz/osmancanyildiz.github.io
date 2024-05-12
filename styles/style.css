@@ -207,6 +207,7 @@ section {
     gap: 2rem;
 
     .bilgilerim {
+      list-style: none;
       flex: 1 1 42rem;
       h2 {
         font-size: 3rem;
@@ -230,7 +231,7 @@ section {
             font-weight: normal;
 
             span {
-              color: lightslategray;
+              color: #aaa;
               font-weight: lighter;
             }
           }
