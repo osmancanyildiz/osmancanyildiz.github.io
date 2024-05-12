@@ -207,7 +207,6 @@ section {
     gap: 2rem;
 
     .bilgilerim {
-      list-style: none;
       flex: 1 1 42rem;
       h2 {
         font-size: 3rem;
@@ -223,6 +222,8 @@ section {
 
         .kutu {
           flex: 1 1 20rem;
+          list-style: none;
+
 
           h3 {
             font-size: 1.7rem;
@@ -739,7 +740,36 @@ section {
   }
 }
 
+.sonuclar {
+  .container {
+    margin-top: 20px;
+    th {
+      background-color: crimson;
+      padding: 1rem;
+      text-align: center;
+      height: 5rem;
+    }
+    td {
+      background-color: #aaa;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+    #adsoyad,
+    #cinsiyet,
+    #sehir,
+    #konu,
+    #adres,
+    #mesaj,
+    #email,
+    #yas {
+      width: 30rem;
+      height: 5rem;
+    }
+  }
+}
+
 /* cihaz uyumu kontrolü */
+
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
