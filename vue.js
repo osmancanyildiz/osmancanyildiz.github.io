@@ -1,6 +1,4 @@
 var app = new Vue({
-
-    
     el: '#app',
     data: {
         adsoyad: '',
@@ -14,6 +12,7 @@ var app = new Vue({
         error: false,
         check: '',
         success: false,
+        submitted: false, // New property to track form submission
         sehirler: [
             "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl",
             "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan",
@@ -24,9 +23,6 @@ var app = new Vue({
             "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
         ]
     },
-
-    
-
     methods: {
         submitForm: function() {
             if (!this.validateForm()) {
@@ -34,11 +30,9 @@ var app = new Vue({
                 setTimeout(() => { this.error = false; }, 3000);
                 console.log('Form gönderildi:', this.data);
                 return;
+            } else {
+                this.success = true;
             }
-            else{
-                this.success=true;
-            }
-            
         },
         validateName: function(name) {
             return /^[a-zA-ZöçşığüÖÇŞİĞÜ,]+(\s{0,1}[a-zA-ZöçşığüÖÇŞİĞÜ, ])*$/.test(name);
@@ -47,9 +41,8 @@ var app = new Vue({
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         },
         validateForm: function() {
-            return this.adsoyad && this.validateName(this.adsoyad) && this.email && this.adres && this.konu && this.cinsiyet && this.yas && this.sehir && this.mesaj && this.check;
-            
+            this.submitted = true; // Set submitted to true when validation is triggered
+            return this.adsoyad && this.validateName(this.adsoyad) && this.email && this.validateEmail(this.email) && this.adres && this.konu && this.cinsiyet && this.yas && this.sehir && this.mesaj && this.check;
         }
     }
 });
-

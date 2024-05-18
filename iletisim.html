@@ -115,12 +115,12 @@
           </div>
 
           <div class="hatakutu">
-            <span v-if="!adsoyad">Ad-Soyad alanı boş geçilemez!(vue)</span>
-            <span v-else-if="!validateName(adsoyad)"
+            <span v-if="submitted && !adsoyad">Ad-Soyad alanı boş geçilemez!(vue)</span>
+            <span v-else-if="submitted && !validateName(adsoyad)"
               >Adınızı ve Soyadınızı tam giriniz!(vue)</span
             >
-            <span v-if="!email">Email alanı boş geçilemez!(vue)</span>
-            <span v-else-if="!validateEmail(email)"
+            <span v-if="submitted && !email">Email alanı boş geçilemez!(vue)</span>
+            <span v-else-if="submitted && !validateEmail(email)"
               >Emailinizi tam giriniz!(vue)</span
             >
           </div>
@@ -136,8 +136,8 @@
           </div>
 
           <div class="hatakutu">
-            <span v-if="!adres">Adres alanı boş geçilemez!(vue)</span>
-            <span v-if="!konu">Konu alanı boş geçilemez!(vue)</span>
+            <span v-if="submitted && !adres">Adres alanı boş geçilemez!(vue)</span>
+            <span v-if="submitted && !konu">Konu alanı boş geçilemez!(vue)</span>
           </div>
 
           <div class="giriskutu">
@@ -217,9 +217,9 @@
           </div>
 
           <div class="hatakutu">
-            <span v-if="!cinsiyet">Cinsiyet seçiniz!(vue)</span>
-            <span v-if="!yas">Yaş seçiniz!(vue)</span>
-            <span v-if="!sehir">Şehir seçiniz!(vue)</span>
+            <span v-if="submitted && !cinsiyet">Cinsiyet seçiniz!(vue)</span>
+            <span v-if="submitted && !yas">Yaş seçiniz!(vue)</span>
+            <span v-if="submitted && !sehir">Şehir seçiniz!(vue)</span>
           </div>
 
           <div class="checkkutu">
@@ -231,7 +231,7 @@
           </div>
 
           <div class="hatakutu">
-            <span v-if="!check">Kabul etmeden devam edemezsiniz!(vue)</span>
+            <span v-if="submitted && !check">Kabul etmeden devam edemezsiniz!(vue)</span>
           </div>
 
           <div class="hatakutu">
@@ -247,7 +247,7 @@
           ></textarea>
 
           <div class="hatakutu">
-            <span v-if="!mesaj">Mesaj alanı boş geçilemez!(vue)</span>
+            <span v-if="submitted && !mesaj">Mesaj alanı boş geçilemez!(vue)</span>
           </div>
 
           <div class="hatakutu">

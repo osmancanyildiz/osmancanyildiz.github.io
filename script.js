@@ -140,7 +140,6 @@ function formKontrol() {
       submithata.style.display = "none";
     }, 5000);
 
-    return false;
   } else {
     submithata.innerHTML = "Başarılı, gönderebilirsiniz.(js)   ";
     return true;
