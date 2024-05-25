@@ -94,7 +94,7 @@
           </div>
         </div>
 
-        <form action="https://send.pageclip.co/QfLPWN6KHDuXPuRBPjh9L5KYUMZwhpAY" method="post" >
+        <form action="https://send.pageclip.co/QfLPWN6KHDuXPuRBPjh9L5KYUMZwhpAY" method="post" @submit.prevent="submitForm">
           <div class="giriskutu">
             <input
               type="text"
@@ -152,7 +152,7 @@
                     <div class="rad">
                       <label for="erkek">Erkek</label>
                       <input
-                        name="cins"
+                        name="sex"
                         type="radio"
                         id="erkek"
                         v-model="cinsiyet"
@@ -163,7 +163,7 @@
                     <div class="rad">
                       <label for="kadin">Kadın</label>
                       <input
-                        name="cins"
+                        name="sex"
                         type="radio"
                         id="kadin"
                         v-model="cinsiyet"
@@ -174,7 +174,7 @@
                     <div class="rad">
                       <label for="other">Diğer</label>
                       <input
-                        name="cins"
+                        name="sex"
                         type="radio"
                         id="diger"
                         v-model="cinsiyet"
@@ -187,7 +187,7 @@
                 <div class="col">
                   <div class="selectkutu">
                     <h1>Yaş:</h1>
-                    <select id="yas" v-model="yas">
+                    <select name="age" id="yas" v-model="yas">
                       <option value="0" disabled selected>Yaş Seçin</option>
                       <option value="0-18">0-18</option>
                       <option value="18-30">18-30</option>
@@ -201,7 +201,7 @@
                 <div class="col">
                   <div class="selectkutu">
                     <h1>Şehir:</h1>
-                    <select id="sehir" v-model="sehir">
+                    <select name="city" id="sehir" v-model="sehir">
                       <option value="0" disabled selected>Şehir Seçin</option>
                       <option v-for="city in sehirler" :value="city">
                         {{ city }}
@@ -226,7 +226,7 @@
           </div>
 
           <div class="checkkutu">
-            <input type="checkbox" id="check" v-model="check" />
+            <input name="checkbox" type="checkbox" id="check" v-model="check" />
             Form aracılığıyla sağladığım verilerimin Gizlilik ve Kişisel
             Verilerin Korunması Politikası kapsamında formda yer alan konu ile
             ilgili olarak tarafımla iletişime geçilmesi amacı ile işlenmesini
@@ -244,6 +244,7 @@
           <textarea
             v-model="mesaj"
             id="mesaj"
+            name="message"
             placeholder="Mesajınız"
             cols="30"
             rows="10"
@@ -262,7 +263,7 @@
               type="submit"
               onclick=" return submitFormjs()"
               value="Gönder"
-              class="btn"
+              class="btn pageclip-form__submit"
             />
             <input
               type="button"
