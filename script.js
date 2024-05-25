@@ -94,7 +94,6 @@ function cinsKontrol() {
 function sehirKontrol() {
   selects = document.getElementById("sehir");
   if (selects.value != "") {
-    // value is set to a valid option, so submit form
     sehirhata.innerHTML = "";
     return true;
   }
@@ -105,7 +104,6 @@ function sehirKontrol() {
 function yasKontrol() {
   selecty = document.getElementById("yas");
   if (selecty.value != "") {
-    // value is set to a valid option, so submit form
     yashata.innerHTML = "";
     return true;
   }
@@ -148,7 +146,6 @@ function formKontrol() {
 
 function submitFormjs() {
   if (formKontrol()) {
-    // Form data
     var formData = {
       adsoyad: document.getElementById("adsoyad").value,
       email: document.getElementById("email").value,
@@ -160,13 +157,10 @@ function submitFormjs() {
       sehir: document.getElementById("sehir").value,
     };
 
-    // Save form data to localStorage
     localStorage.setItem("formData", JSON.stringify(formData));
 
-    // Redirect to sonuc.html
     window.location.href = "sonuc.html";
   } else {
-    // Show error message
     console.log("Form validation failed");
   }
 }

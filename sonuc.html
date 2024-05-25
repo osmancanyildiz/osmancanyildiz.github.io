@@ -86,10 +86,8 @@
     </section>
 
     <script>
-      // Retrieve form data from localStorage
       var formData = JSON.parse(localStorage.getItem("formData"));
 
-      // Display form data in table
       document.getElementById("adsoyad").innerText = formData.adsoyad;
       document.getElementById("email").innerText = formData.email;
       document.getElementById("cinsiyet").innerText = formData.cinsiyet;
