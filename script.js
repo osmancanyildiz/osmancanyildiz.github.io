@@ -161,6 +161,6 @@ function submitFormjs() {
 
     window.location.href = "sonuc.html";
   } else {
-    console.log("Form validation failed");
+    console.log("Form gönderilemedi!");
   }
 }

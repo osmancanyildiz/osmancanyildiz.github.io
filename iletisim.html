@@ -9,7 +9,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -94,11 +93,10 @@
           </div>
         </div>
 
-        <form action="https://send.pageclip.co/QfLPWN6KHDuXPuRBPjh9L5KYUMZwhpAY" method="post" @submit.prevent="submitForm">
+        <form method="post" @submit.prevent="submitForm">
           <div class="giriskutu">
             <input
               type="text"
-              name="name"
               id="adsoyad"
               v-model="adsoyad"
               placeholder="Ad-Soyad"
@@ -106,7 +104,6 @@
             <input
               type="email"
               id="email"
-              name="email"
               v-model="email"
               placeholder="Email"
             />
@@ -129,8 +126,8 @@
           </div>
 
           <div class="giriskutu">
-            <input type="text" id="adres" name="address" v-model="adres" placeholder="Adres" />
-            <input type="text" id="konu" name="subject" v-model="konu" placeholder="Konu" />
+            <input type="text" id="adres" v-model="adres" placeholder="Adres" />
+            <input type="text" id="konu" v-model="konu" placeholder="Konu" />
           </div>
 
           <div class="hatakutu">
@@ -152,7 +149,7 @@
                     <div class="rad">
                       <label for="erkek">Erkek</label>
                       <input
-                        name="sex"
+                        name="cins"
                         type="radio"
                         id="erkek"
                         v-model="cinsiyet"
@@ -163,7 +160,7 @@
                     <div class="rad">
                       <label for="kadin">Kadın</label>
                       <input
-                        name="sex"
+                        name="cins"
                         type="radio"
                         id="kadin"
                         v-model="cinsiyet"
@@ -174,7 +171,7 @@
                     <div class="rad">
                       <label for="other">Diğer</label>
                       <input
-                        name="sex"
+                        name="cins"
                         type="radio"
                         id="diger"
                         v-model="cinsiyet"
@@ -187,7 +184,7 @@
                 <div class="col">
                   <div class="selectkutu">
                     <h1>Yaş:</h1>
-                    <select name="age" id="yas" v-model="yas">
+                    <select id="yas" v-model="yas">
                       <option value="0" disabled selected>Yaş Seçin</option>
                       <option value="0-18">0-18</option>
                       <option value="18-30">18-30</option>
@@ -201,7 +198,7 @@
                 <div class="col">
                   <div class="selectkutu">
                     <h1>Şehir:</h1>
-                    <select name="city" id="sehir" v-model="sehir">
+                    <select id="sehir" v-model="sehir">
                       <option value="0" disabled selected>Şehir Seçin</option>
                       <option v-for="city in sehirler" :value="city">
                         {{ city }}
@@ -226,11 +223,11 @@
           </div>
 
           <div class="checkkutu">
-            <input name="checkbox" type="checkbox" id="check" v-model="check" />
-            Form aracılığıyla sağladığım verilerimin Gizlilik ve Kişisel
-            Verilerin Korunması Politikası kapsamında formda yer alan konu ile
-            ilgili olarak tarafımla iletişime geçilmesi amacı ile işlenmesini
-            kabul ediyorum.
+            <input type="checkbox" id="check" v-model="check" />
+            <label for="check">
+              Form aracılığıyla sağladığım verilerimin tarafımla iletişime geçilmesi amacı ile işlenmesini
+              kabul ediyorum.
+            </label>
           </div>
 
           <div class="hatakutu">
@@ -244,7 +241,6 @@
           <textarea
             v-model="mesaj"
             id="mesaj"
-            name="message"
             placeholder="Mesajınız"
             cols="30"
             rows="10"
@@ -263,7 +259,7 @@
               type="submit"
               onclick=" return submitFormjs()"
               value="Gönder"
-              class="btn pageclip-form__submit"
+              class="btn"
             />
             <input
               type="button"
@@ -277,7 +273,6 @@
               value="Kontrol Et (vueJS)"
               class="btn"
             />
-            <button type="submit" class="pageclip-form__submit">Send</button>
 
             <input type="reset" value="Temizle" class="btn" />
 
@@ -298,6 +293,5 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
     <script src="vue.js"></script>
     <script src="script.js"></script>
-    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   </body>
 </html>
